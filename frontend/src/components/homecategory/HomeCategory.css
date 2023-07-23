@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+.HomeInventoryCard img{
+    height: 50px;
+    width: 80px;
+}
+
+.HomeInventoryCard h3{
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: black;
+    font-weight: 300;
+    text-align: center;
+}

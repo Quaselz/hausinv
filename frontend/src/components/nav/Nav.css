@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+nav{
+    background-color: rgba(214, 202, 202, 0.734);
+    padding: 15px 0;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.linkNav{
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.linkNav:hover{
+    text-decoration: underline;
+}

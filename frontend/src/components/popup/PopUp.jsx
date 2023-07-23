@@ -1,35 +1,35 @@
-import "./PopUp.css"
+import "./PopUp.css";
 
 const PopUp = () => {
     return ( 
         <div>
-            <img src="" alt="x"/>
-            <form>
+            <img src="" alt="X" />
+            <form action="">
                 <h2>ADD NEW ITEM</h2>
                 <div>
                     <label htmlFor="titel">TITEL</label>
-                    <input type="text" placeholder="TITEL" name="titel" id="titel" />
+                    <input type="text" placeholder="TITEL" id="titel"/>
                 </div>
                 <div>
                     <label htmlFor="room">ROOM</label>
-                    <input type="text" placeholder="ROOM" name="room" id="room" />
+                    <input type="text" placeholder="ROOM" id="room"/>
                 </div>
                 <div>
                     <label htmlFor="image">IMAGE</label>
-                    <input type="file" placeholder="IMAGE" name="image" id="image" />
+                    <input type="text" placeholder="IMAGE" id="image"/>
                 </div>
                 <div>
-                    <label htmlFor="">ADD DESCRIPTION</label>
-                    <input type="text" placeholder="ADD DESCRIPTION" name="descriptionHead" id="descriptionHead" />
+                    <label htmlFor="descriptionHead">ADD DESCRIPTION</label>
+                    <input type="text" placeholder="ADD DESCRIPTION" id="descriptionHead"/>
                 </div>
                 <div>
                     <label htmlFor="textfield">ADD TEXT</label>
-                    <input type="textfield" name="textfield" placeholder="ADD TEXT" id="textfield" />
+                    <input type="text" placeholder="ADD TEXT" id="textfield"/>
                 </div>
                 <button type="submit">PUBLISH</button>
             </form>
         </div>
-     );
+    );
 }
  
 export default PopUp;

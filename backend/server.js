@@ -1,23 +1,24 @@
+import "./config/config.js";
 import express from "express";
 import cors from "cors";
-import "./config/config.js";
-import "./models/index.js";
 import morgan from "morgan";
-import { Inventar } from "./models/InventarModel.js";
 import multer from "multer";
-
-const app = express();
-const port = 3000;
-const upload = multer({ storage: multer.memoryStorage() });
-
+import "./models/index.js";
+import { Inventar } from "./models/InventarModel.js";
 import { v2 as cloudinary } from "cloudinary";
 
+const app = express();
+const PORT = 3000;
+const upload = multer({ storage: multer.memoryStorage() });
+
+//Cloudinary data
 cloudinary.config({
 	cloud_name: process.env.CLOUDINARY_CLOUDNAME,
 	api_key: process.env.CLOUDINARY_API_KEY,
 	api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+//Middelware
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
@@ -32,11 +33,13 @@ app.get("/api/inventar/:id", async (req, res) => {
 	const data = await Inventar.findById(id);
 	res.send(data);
 });
-app.post("/api/inventar", upload.single("image"), async (req, res) => {
+
+app.post("/api/inventar/image", upload.single("image"), async (req, res) => {
+	console.log(req.file);
 	try {
 		cloudinary.uploader
 			.upload_stream(
-				{ resoure_type: "image", folder: "Hausinventar" },
+				{ resource_type: "image", folder: "InventarImages" },
 				async (err, result) => {
 					const response = await Inventar.create({
 						...req.body,
@@ -46,20 +49,21 @@ app.post("/api/inventar", upload.single("image"), async (req, res) => {
 				}
 			)
 			.end(req.file.buffer);
-	} catch (err) {
-		console.error(err);
-		res.sendStatus(500).send(err);
+	} catch (error) {
+		console.log(error);
+		res.status(500).send("bababa");
 	}
 });
 
 app.put("/api/inventar/:id", upload.single("image"), async (req, res) => {
 	try {
 		const id = req.params.id;
+		//console.log(req.file.buffer);
 
 		if (req.file) {
 			cloudinary.uploader
 				.upload_stream(
-					{ resource_type: "image", folder: "Hausinventar" },
+					{ resource_type: "image", folder: "InventarImages" },
 					async (err, result) => {
 						const response = await Inventar.findByIdAndUpdate(id, {
 							...req.body,
@@ -85,17 +89,16 @@ app.put("/api/inventar/:id", upload.single("image"), async (req, res) => {
 app.delete("/api/inventar/:id", async (req, res) => {
 	const id = req.params.id;
 	try {
-		const deletedInventar = await Inventar.findByIdAndDelete(id);
-		cloudinary.uploader.destroy(deletedInventar.image?.imageId, (err) =>
-			console.log(err)
-		);
-		res.send("Post has been deleted");
-	} catch (err) {
-		console.error(err);
-		res.sendStatus(500).send("deleteFehler");
+		const deleteInventar = await Inventar.findByIdAndDelete(id);
+		cloudinary.uploader.destroy(deleteInventar.image?.imageId, (error) => {
+			console.log(err);
+		});
+	} catch (error) {
+		console.log(err);
+		res.send("Error Image Deletion");
 	}
 });
 
-app.listen(port, () => {
-	console.log("tschuuu tschuuu");
+app.listen(PORT, () => {
+	console.log(`Port läuft auf Port: ${PORT}`);
 });

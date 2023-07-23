@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import "./DetailPage.css";
 import Nav from "../components/nav/Nav";
 import InventoryCardDetails from "../components/inventorycarddetails/InventoryCardDetails";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 const DetailPage = () => {
-
+    
     const [inventoryItem, setInventoryItem] = useState([]);
     const params = useParams();
     const navigate = useNavigate();
-
 
     useEffect(()=>{
         const getInventoryItem = async() => {
@@ -22,8 +20,8 @@ const DetailPage = () => {
         getInventoryItem();
     },[])
 
-    console.log(inventoryItem);
 
+    
     return ( 
         <>
             <header>
@@ -37,10 +35,8 @@ const DetailPage = () => {
                 </section>
             </main>
 
-            <footer>
-                
-                    <img onClick={() => navigate(-1)} src="" alt="<-"/>
-                
+            <footer> 
+                <img onClick={() => navigate(-1)} src="" alt="BackButton" />
             </footer>
         </>
      );

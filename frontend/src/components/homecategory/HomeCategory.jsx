@@ -1,8 +1,12 @@
+import "./HomeCategory.css";
+
 const HomeCategory = ({name, imgPath}) => {
     return ( 
-        <article>
-            <img src={imgPath} alt={`category${name}`}/>
-            <h2>{name}</h2>
+        <article className="HomeInventoryCard">
+            <img src={imgPath} alt={`category: ${name}`} />
+            <h3>
+                {name}
+            </h3>
         </article>
      );
 }

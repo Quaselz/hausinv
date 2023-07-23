@@ -1,0 +1,49 @@
+import { useState, useEffect } from "react";
+import { Link, useParams } from 'react-router-dom';
+import "./DetailPage.css";
+import Nav from "../components/nav/Nav";
+import InventoryCardDetails from "../components/inventorycarddetails/InventoryCardDetails";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+
+const DetailPage = () => {
+
+    const [inventoryItem, setInventoryItem] = useState([]);
+    const params = useParams();
+    const navigate = useNavigate();
+
+
+    useEffect(()=>{
+        const getInventoryItem = async() => {
+            const response = await axios.get(`/api/inventar/${params.id}`)
+            setInventoryItem(response.data)
+        }
+        getInventoryItem();
+    },[])
+
+    console.log(inventoryItem);
+
+    return ( 
+        <>
+            <header>
+                <Nav/>
+            </header>
+
+            <main>
+                <section>
+                    <InventoryCardDetails id={inventoryItem._id} titel={inventoryItem.titel} room={inventoryItem.room} 
+                    imageUrl={inventoryItem.image?.url} descriptionHead={inventoryItem.descriptionHead} textfield={inventoryItem.textfield}/>
+                </section>
+            </main>
+
+            <footer>
+                
+                    <img onClick={() => navigate(-1)} src="" alt="<-"/>
+                
+            </footer>
+        </>
+     );
+}
+ 
+export default DetailPage;

@@ -80,3 +80,10 @@
     border: solid rgb(173, 172, 172) 2px;
     padding: 1.7px;
 }
+
+
+.hideMe{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}

@@ -4,11 +4,13 @@ import "./CategoryPage.css";
 import Nav from "../components/nav/Nav";
 import InventoryCard from "../components/inventorycard/InventoryCard";
 import axios from "axios";
+import PopUp from "../components/popup/PopUp";
 
 
 const CategoryPage = () => {
     
     const [inventory, setInventory] = useState([]);
+    const [refresh, setRefresh] = useState(true);
     const params = useParams();
     
     useEffect(()=>{
@@ -17,7 +19,7 @@ const CategoryPage = () => {
             setInventory(response.data)
         }
         getInventory();
-    },[])
+    },[refresh])
 
     const filterInventory = inventory.filter((item) => 
     item.category === params.category)
@@ -41,7 +43,7 @@ const CategoryPage = () => {
                     <article>
                         <p>Add something</p>
                         <img src="" alt="+" />
-                        
+                        <PopUp setRefresh={setRefresh} category={params.category}/>
                     </article>
                 </section>
             </main>

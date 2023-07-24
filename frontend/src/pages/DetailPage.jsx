@@ -11,6 +11,7 @@ const DetailPage = () => {
     const [inventoryItem, setInventoryItem] = useState([]);
     const params = useParams();
     const navigate = useNavigate();
+    const [refresh, setRefresh] = useState(true);
 
     useEffect(()=>{
         const getInventoryItem = async() => {
@@ -18,7 +19,7 @@ const DetailPage = () => {
             setInventoryItem(response.data)
         }
         getInventoryItem();
-    },[])
+    },[refresh])
 
 
     
@@ -31,7 +32,8 @@ const DetailPage = () => {
             <main>
                 <section>
                     <InventoryCardDetails id={inventoryItem._id} titel={inventoryItem.titel} room={inventoryItem.room} 
-                    imageUrl={inventoryItem.image?.url} descriptionHead={inventoryItem.descriptionHead} textfield={inventoryItem.textfield}/>
+                    imageUrl={inventoryItem.image?.url} descriptionHead={inventoryItem.descriptionHead} textfield={inventoryItem.textfield}
+                    setRefresh={setRefresh}/>
                 </section>
             </main>
 

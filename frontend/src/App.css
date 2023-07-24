@@ -12,6 +12,7 @@ html {
 img {
 	max-width: 100%;
 }
+
 footer {
 	position: fixed;
 	bottom: 0;
@@ -22,6 +23,7 @@ footer {
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;
+	cursor: pointer;
 }
 
 .backarrow span {

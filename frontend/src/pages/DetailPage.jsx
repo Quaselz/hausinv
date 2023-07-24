@@ -37,7 +37,9 @@ const DetailPage = () => {
             </main>
 
             <footer> 
-                <img onClick={() => navigate(-1)} src="" alt="BackButton" />
+                <div onClick={() => navigate(-1)} className="backarrow">
+                        <span></span>
+                </div>
             </footer>
         </>
      );

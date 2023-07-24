@@ -10,7 +10,8 @@ import { v2 as cloudinary } from "cloudinary";
 const app = express();
 const PORT = 3000;
 const upload = multer({ storage: multer.memoryStorage() });
-
+const FE_DIR = new URL("./frontend/dist", import.meta.url).pathname;
+const FE_INDEX = new URL("./frontend/dist/index.html", import.meta.url).pathname;
 //Cloudinary data
 cloudinary.config({
 	cloud_name: process.env.CLOUDINARY_CLOUDNAME,
@@ -22,6 +23,8 @@ cloudinary.config({
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
+app.use(express.static(FE_DIR));
+
 
 app.get("/api/inventar", async (req, res) => {
 	const data = await Inventar.find();
@@ -98,6 +101,8 @@ app.delete("/api/inventar/:id", async (req, res) => {
 		res.send("Error Image Deletion");
 	}
 });
+
+app.get("*", (req, res) => )
 
 app.listen(PORT, () => {
 	console.log(`Port läuft auf Port: ${PORT}`);

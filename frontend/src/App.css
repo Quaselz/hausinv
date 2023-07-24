@@ -1,12 +1,53 @@
-
 * {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  
-html {
-    font-size: 62.5%;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+
+footer {
+	position: fixed;
+	bottom: 0;
+	margin: 2%;
+}
+.backarrow {
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.backarrow span {
+	position: absolute;
+	top: calc((100% - 1px) / 2);
+	width: 20px;
+	height: 1px;
+	background-color: #fff;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	right: calc(50% - 10px);
+	left: calc(50% - 10px);
+}
+.backarrow span:after,
+.backarrow span:before {
+	content: "";
+	position: absolute;
+	width: 63%;
+	height: 1px;
+	right: 9px;
+	background-color: #fff;
+}
+
+.backarrow span:after {
+	top: -5px;
+	transform: rotate(-45deg);
+}
+.backarrow span:before {
+	top: 5px;
+	transform: rotate(45deg);
+}

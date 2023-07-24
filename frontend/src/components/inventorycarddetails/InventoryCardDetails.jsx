@@ -19,7 +19,7 @@ const InventoryCardDetails = ({id, titel, room, imageUrl, descriptionHead, textf
         setDescriptionHeadForm(true)
         setTextfieldForm(true)
         setRefresh(prev => !prev)
-
+        
         e.target.reset();
     }
 
@@ -27,7 +27,7 @@ const InventoryCardDetails = ({id, titel, room, imageUrl, descriptionHead, textf
     return ( 
         <>{id?
         <article className="InventoryCardDetailsContainer">
-            <form onSubmit={updateInv}>
+            <form className="InventoryDetailsForm" onSubmit={updateInv}>
             <div className="ICD-img-container">
                 <label htmlFor="image"><img src={imageUrl} alt={titel} /></label>
                 <div className="imgInputDiv">

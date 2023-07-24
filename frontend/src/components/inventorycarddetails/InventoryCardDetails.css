@@ -65,15 +65,27 @@ input{
     border-bottom-left-radius: 5px;
 } 
 
+.imgInputDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: -30px;
+}
+
+.imgInput{
+    margin-top: 1.2%;
+}
+
+
 form{
     display: flex;
     align-items: center;
 }
 
 .imgBtn{
-    margin-top: -10%;
+    margin-bottom: auto;
     width: 25px;
     margin-left: 2%;
+    margin-top: 2%;
 }
 
 .ICD-text-container{

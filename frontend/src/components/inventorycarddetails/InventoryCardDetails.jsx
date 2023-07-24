@@ -30,9 +30,11 @@ const InventoryCardDetails = ({id, titel, room, imageUrl, descriptionHead, textf
             <form onSubmit={updateInv}>
             <div className="ICD-img-container">
                 <label htmlFor="image"><img src={imageUrl} alt={titel} /></label>
-                <input type="file" name="image" className={imageForm?"hideMe":""} placeholder={imageUrl} id="image"/>
+                <div className="imgInputDiv">
+                    <input type="file" name="image" className={imageForm?"hideMe imgInput":" imgInput"} placeholder={imageUrl} id="image"/>
 
-                <button className="imgBtn" type="button" onClick={() => {setImgForm(prev => !prev)}}>Edit</button>
+                    <button className="imgBtn" type="button" onClick={() => {setImgForm(prev => !prev)}}>Edit</button>
+                </div>
             </div>
             <div className="ICD-text-container">
                 <div className="ICD-text-edit">

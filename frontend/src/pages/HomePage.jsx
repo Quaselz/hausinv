@@ -18,9 +18,9 @@ const HomePage = () => {
 
             <main>
                 <section className="categoryLinksContainer">
-                    <NavLink to="/categoryPage/big"><HomeCategory name="big stuff" imgPath="" /> { <img src={bigStuff} alt="big stuff" /> } </NavLink> 
-                    <NavLink to="/categoryPage/medium"><HomeCategory name="not so big stuff" imgPath=""/> <img src={middelStuff} alt="not so big stuff" /> </NavLink> 
-                    <NavLink to="/categoryPage/small"><HomeCategory name="small stuff" imgPath=""/> <img src={smallStuff} alt="small stuff" /> </NavLink>
+                    <NavLink to="/categoryPage/big"><HomeCategory name="big stuff" imgPath={bigStuff} /> </NavLink> 
+                    <NavLink to="/categoryPage/medium"><HomeCategory name="not so big stuff" imgPath={middelStuff}/> </NavLink> 
+                    <NavLink to="/categoryPage/small"><HomeCategory name="small stuff" imgPath={smallStuff} /> </NavLink>
                 </section>
             </main>
 

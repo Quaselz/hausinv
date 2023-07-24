@@ -27,6 +27,9 @@
 	flex-direction: row-reverse;
 	margin: auto;
 	align-items: center;
+	cursor: pointer;
+	min-width: 15%;
+	max-width: 25%;
 }
 
 span.plus {

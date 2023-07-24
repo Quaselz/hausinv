@@ -52,8 +52,11 @@ const CategoryPage = () => {
             </main>
 
             <footer>
+
                 <Link to="/">
-                    <img src="" alt="BackButton" />
+                    <div className="backarrow">
+                        <span></span>
+                    </div>
                 </Link>
             </footer>
         </>

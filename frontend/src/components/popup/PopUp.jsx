@@ -11,6 +11,7 @@ const PopUp = ({setRefresh, category, setPopup, popup}) => {
         setRefresh(prev => !prev)
 
         e.target.reset()
+        setPopup(true)
     }
     return ( 
         <div className={popup?"hideMe popup":"popup"}>

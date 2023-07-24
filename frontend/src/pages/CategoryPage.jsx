@@ -12,6 +12,7 @@ const CategoryPage = () => {
     const [inventory, setInventory] = useState([]);
     const [refresh, setRefresh] = useState(true);
     const params = useParams();
+    const [popup, setPopup] = useState(true)
     
     useEffect(()=>{
         const getInventory = async() => {
@@ -31,7 +32,7 @@ const CategoryPage = () => {
                 <Nav/>
             </header>
 
-            <main>
+            <main className="categoryPage-main">
                 <section>
                     {filterInventory?.map((ele) => 
                     <InventoryCard key={ele._id} id={ele._id} titel={ele.titel} room={ele.room} 
@@ -39,12 +40,14 @@ const CategoryPage = () => {
                     />)}
 
                 </section>
-                <section>
-                    <article>
-                        <p>Add something</p>
-                        <img src="" alt="+" />
-                        <PopUp setRefresh={setRefresh} category={params.category}/>
-                    </article>
+                    <section className="addSomething-section">
+                        <div onClick={() => {setPopup(false)}}> 
+                            <p>Add something</p>
+                            <span className="plus"></span>
+                        </div>
+                    </section>
+                <section className={popup?"hideMe popup-section":"popup-section"}>
+                        <PopUp popup={popup} setRefresh={setRefresh} setPopup={setPopup} category={params.category}/>
                 </section>
             </main>
 

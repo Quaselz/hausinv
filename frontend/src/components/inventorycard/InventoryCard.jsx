@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./InventoryCard.css";
 
 const InventoryCard = ({id, titel, room, imageUrl, descriptionHead, textfield}) => {
@@ -12,7 +12,7 @@ const InventoryCard = ({id, titel, room, imageUrl, descriptionHead, textfield}) 
                 <h5>{room}</h5>
                 <h4>{descriptionHead}</h4>
                 <p>{textfield}</p>
-                <Link to={`/detailPage/${id}`}>Edit</Link>
+                <NavLink className="button" to={`/detailPage/${id}`}>Edit</NavLink>
             </div>
         </article>
      );

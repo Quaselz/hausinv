@@ -1,55 +1,51 @@
 @font-face {
-    font-family: "Montserrat";
-    src: url("../../assets/fonts/Montserrat-VariableFont_wght.ttf");
+	font-family: "Montserrat";
+	src: url("../../assets/fonts/Montserrat-VariableFont_wght.ttf");
 }
 
-.InventoryCardContainer{
-    display: flex;
-    align-items: center;
-    border: solid rgb(173, 172, 172) 2px;
-    margin: 2% 2%;
-    width: 60vw;
-    border-radius: 5px;
+.InventoryCardContainer {
+	display: flex;
+	align-items: center;
+	border: solid rgb(173, 172, 172) 2px;
+	width: 60vw;
+	border-radius: 5px;
+	margin-bottom: 2%;
 }
 
 /* .InventoryCardImg{
 
 }  */
 
-.InventoryCardText{
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    padding: 2%;
-    position: relative;
+.InventoryCardText {
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	padding: 2%;
+	position: relative;
 }
 
-.InventoryCardText h3{
-    font-size: 2rem;
-    font-weight: 500;
+.InventoryCardText h3 {
+	font-size: 2rem;
+	font-weight: 500;
 }
 
-.InventoryCardText h5{
-    font-size: 1.1rem;
-
+.InventoryCardText h5 {
+	font-size: 1.1rem;
 }
 
-.InventoryCardText h4{
-    font-size: 1.6rem;
-
+.InventoryCardText h4 {
+	font-size: 1.6rem;
 }
 
-.InventoryCardText p{
-    font-size: 1rem;
-
+.InventoryCardText p {
+	font-size: 1rem;
 }
 
-.InventoryCardText a{
-    font-size: 1rem;
-    color: black;
-    text-decoration: none;
+.InventoryCardText a {
+	font-size: 1rem;
+	color: black;
+	text-decoration: none;
 
-    
-    text-align: right;
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
+	text-align: right;
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
 }

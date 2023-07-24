@@ -12,3 +12,11 @@ html {
 img {
 	max-width: 100%;
 }
+
+button,
+.button {
+	padding: 8px;
+	margin-top: 8px;
+	min-width: 120px;
+	max-width: 120px;
+}

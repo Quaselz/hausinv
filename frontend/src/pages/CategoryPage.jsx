@@ -26,7 +26,6 @@ const CategoryPage = () => {
     const filterInventory = inventory.filter((item) => 
     item.category === params.category)
 
-
     return ( 
         <>
             <header>

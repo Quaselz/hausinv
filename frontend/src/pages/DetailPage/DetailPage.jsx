@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import "./DetailPage.css";
-import Nav from "../components/nav/Nav";
-import InventoryCardDetails from "../components/inventorycarddetails/InventoryCardDetails";
+import Nav from "../../components/nav/Nav";
+import InventoryCardDetails from "../../components/inventorycarddetails/InventoryCardDetails";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

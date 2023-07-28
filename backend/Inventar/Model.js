@@ -18,3 +18,5 @@ const inventarSchema = new mongoose.Schema({
 });
 
 export const Inventar = mongoose.model("Inventar", inventarSchema);
+
+export default inventarSchema;

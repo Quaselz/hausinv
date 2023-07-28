@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from 'react-router-dom';
 import "./CategoryPage.css";
-import Nav from "../components/nav/Nav";
-import InventoryCard from "../components/inventorycard/InventoryCard";
+import Nav from "../../components/nav/Nav";
+import InventoryCard from "../../components/inventorycard/InventoryCard";
 import axios from "axios";
-import PopUp from "../components/popup/PopUp";
+import PopUp from "../../components/popup/PopUp";
 
 
 

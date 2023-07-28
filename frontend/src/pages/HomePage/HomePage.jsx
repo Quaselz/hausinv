@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import HomeCategory from "../components/homecategory/HomeCategory";
-import Nav from "../components/nav/Nav";
+import HomeCategory from "../../components/homecategory/HomeCategory";
+import Nav from "../../components/nav/Nav";
 import "./HomePage.css";
 import bigStuff from "../assets/images/big.jpeg";
 import middelStuff from "../assets/images/middel2.jpeg";
